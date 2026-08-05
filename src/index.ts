@@ -319,6 +319,9 @@ const main = async (canvas: HTMLCanvasElement, settingsJson: any, config: Config
         });
     }
 
+    // FORK: expose the bridge for Captory's overlay
+    (window as any).captory = global;
+
     // Create the viewer
     return new Viewer(global, gsplatLoad, skyboxLoad, collisionLoad);
 };
